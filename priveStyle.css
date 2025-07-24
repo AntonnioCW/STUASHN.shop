@@ -1,0 +1,95 @@
+.title {
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color: aliceblue;
+  transition: font-size 0.5s ease;
+  font-size: 150px;
+  font-weight: bolder;
+}
+
+.nav-button {
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  margin-top: 25px;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color: aliceblue;
+  transition: font-size 0.5s ease;
+  font-size: 18px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.sidenav a {
+  color: aliceblue;
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: font-size 0.5s ease;
+  font-size: 18px;
+}
+
+.sidenav a:hover {
+  font-size: 20px;
+  background-color: #2e2e2e;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  margin-left: 260px;
+  /* Adjust this margin to fit the width of your sidenav */
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+
+@media screen and (max-width: 768px) {
+            .sidenav {
+                width: 30%;
+                overflow: hidden;
+            }
+
+            .sidenav a {
+                font-size: 10px;
+            }
+              .sidenav a:hover {
+            font-size: 12px;
+            background-color: #2e2e2e;
+            }
+
+            #main {
+                margin-left: 10px;
+            }
+
+            .contact-form {
+                width: 90vw;
+                max-width: 250px;
+                min-width: 0;
+                margin-left: 20%;
+            }
+            #main {
+                margin-left: 40vh;
+            }
+        }

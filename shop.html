@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        body {
+            background-color: #2e2e2e;
+            margin: 0;
+            overflow: scroll;
+            height: 100vh;
+        }
+
+        .flap span {
+            display: block;
+            height: var(--line-height);
+            line-height: var(--line-height);
+            color: rgb(214, 214, 214);
+        }
+
+        #text.flap {
+            font-family: "Space Mono", monospace;
+            font-weight: 1;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a class="title" href="/startpage.html">ToneSki</a>
+        <a class="nav-button" href="/shop.html">Home</a>
+        <a class="nav-button" href="/contact.html">Contact</a>
+        <a class="nav-button" href="privacy-policy.html">Privacy Policy</a>
+        <a class="nav-button" href="terms-of-service.html">Terms of Service</a>
+        <!-- <a class="nav-button" href="archive.html">Archive</a> -->
+    </div>
+    <div id="main">
+        <div id="cards">
+            <div class="card">
+                <div class="card-content">
+                    <a href="/public/hoodie(black).html">
+                        <img src="assets/PANTONE-19-3916-TCX-Charcoal-Art-Color.jpg">
+                    </a>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <div class="card-info-title">
+                                <pre class="flap hidden">
+STUASHN Hoodie
+"Space Black"
+$59.99
+                    </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="public/hoodie(white).html">
+                        <img src="assets/PANTONE-19-3916-TCX-Charcoal-Art-Color.jpg.webp">
+                    </a>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <div class="card-info-title">
+                                <pre class="flap hidden">
+STUASHN Hoodie
+"Off White"
+$59.99
+                  </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="public/hoodie(Pink).html">
+                        <img src="assets/PANTONE-19-3916-TCX-Charcoal-Art-Color.jpg.webp">
+                    </a>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <div class="card-info-title">
+                                <pre class="flap hidden">
+STUASHN Hoodie
+"Salmon Pink"
+$59.99
+              </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <a href="public/hoodie(green).html">
+                        <img src="assets/PANTONE-19-3916-TCX-Charcoal-Art-Color.jpg.webp">
+                    </a>
+                    <div class="card-info-wrapper">
+                        <div class="card-info">
+                            <div class="card-info-title">
+                                <pre class="flap hidden">
+STUASHN Hoodie
+"Lime Green"
+$59.99
+              </pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { flip } from './script.js'
+        flip('.flap') 
+    </script>
+    <script src="hover.js"></script>
+    <!-- <div id="text">
+        <pre class="flap hidden">
+            STUSHKI
+        </pre>
+    </div> -->
+
+    <!-- <script>
+        const text = document.getElementById('text');
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+
+        // Update target position on mouse move
+        document.addEventListener('mousemove', (event) => {
+            targetX = event.clientX;
+            targetY = event.clientY;
+        });
+
+        // Smooth animation function
+        function smoothMove() {
+            // Gradually ease current position toward the target
+            currentX += (targetX - currentX) * 0.1;
+            currentY += (targetY - currentY) * 0.1;
+
+            // Update position
+            text.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+            // Request the next animation frame
+            requestAnimationFrame(smoothMove);
+        }
+
+        // Start the animation loop
+        smoothMove();
+    </script> -->
+</body>
+
+</html>

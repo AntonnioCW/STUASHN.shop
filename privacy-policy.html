@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Privacy Policy</title>
+
+    <link rel="stylesheet" href="priveStyle.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #c6c6c6;
+            font-family: "Space Mono", monospace;
+            background-color: #2e2e2e;
+            margin: 0;
+            overflow: scroll;
+        }
+
+        h1,
+        h2 {
+            color: #ffffff;
+        }
+
+        a {
+            color: #00000000;
+            text-decoration: none;
+        }
+
+        .flap span {
+            display: block;
+            height: var(--line-height);
+            line-height: var(--line-height);
+            color: rgb(214, 214, 214);
+        }
+
+        #text.flap {
+            font-family: "Space Mono", monospace;
+            font-weight: 1;
+            font-style: italic;
+        }
+
+        #text {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Standard */
+            position: absolute;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            transition: transform .2s ease-out;
+            pointer-events: none;
+            /* Prevent interference */
+            transform: translate(-50%, -50%);
+            /* Center text around the cursor */
+            will-change: transform;
+            /* Performance optimization */
+        }
+
+        .email {
+            text-decoration: none;
+            color: aliceblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a class="title" href="/startpage.html">ToneSki</a>
+        <p>
+            <a class="nav-button" href="/shop.html">Home</a>
+            <a class="nav-button" href="/contact.html">Contact</a>
+            <a class="nav-button" href="terms-of-service.html">Terms of Service</a>
+            <!-- <a class="nav-button" href="archive.html">Archive</a> -->
+    </div>
+    <div id="main">
+        <div id="cards">
+            <div class="card">
+                <div class="card-content">
+                    <h1>Privacy Policy</h1>
+                    <p>Welcome. Your privacy is important to us.
+                        This Privacy Policy explains how we collect, use, and protect your information when you visit
+                        our website and
+                        purchase our products.</p>
+
+                    <h2>Information We Collect</h2>
+                    <ul>
+                        <li><strong>Personal Information:</strong> Name, email address, phone number, shipping address,
+                            billing address, payment information.</li>
+                        <li><strong>Non-Personal Information:</strong> Browser type, IP address, pages visited, and
+                            other analytical data.</li>
+                    </ul>
+
+                    <h2>How We Use Your Information</h2>
+                    <ul>
+                        <li>To process transactions and fulfill orders.</li>
+                        <li>To communicate with you regarding your orders, inquiries, or marketing purposes (with your
+                            consent).</li>
+                        <li>To improve our website and customer experience.</li>
+                    </ul>
+
+                    <h2>Sharing Your Information</h2>
+                    <p>We do not sell your personal data. We may share information with third parties to process
+                        payments, ship orders, and perform website analytics.</p>
+
+                    <h2>Data Security</h2>
+                    <p>We take reasonable measures to protect your personal information, but no method of transmission
+                        over the Internet is 100% secure.</p>
+
+                    <h2>Your Rights</h2>
+                    <p>You have the right to access, update, or delete your personal information. Contact us at
+                        <strong>contactstuashn@gmail.com</strong> for assistance.</p>
+
+                    <h2>Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time. We'll notify you of any changes by posting
+                        the updated policy on our website.</p>
+
+                    <h2>Contact Us</h2>
+                    <p>If you have any questions about this Privacy Policy, please contact us at:</p>
+                    <p>Email: <a class="email" href="mailto:[contactstuashn@gmail.com]">contactstuashn@gmail.com</a></p>
+
+                    <p>© www.STUASHN.com 2025. All Rights Reserved.</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="module">
+    import { flip } from './script.js'
+    flip('.flap') 
+</script>
+
+</html>

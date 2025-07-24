@@ -1,0 +1,405 @@
+body {
+  background-color: #2e2e2e;
+  align-items: center;
+  height: 100vh;
+  background-position: center;
+  font-size: x-large;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: auto;
+  /* Changed from hidden to auto */
+}
+
+.title {
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color: aliceblue;
+  transition: font-size 0.5s ease;
+  font-size: 150px;
+  font-style: italic;
+  font-weight: bolder;
+}
+
+.nav-button {
+  line-height: 5;
+  font-family: "Space Mono", monospace;
+  margin-top: 25px;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color: aliceblue;
+  transition: font-size 0.5s ease;
+  font-size: 18px;
+}
+
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #161616;
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.sidenav a {
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  transition: font-size 0.5s ease;
+  font-size: 18px;
+}
+
+.sidenav a:hover {
+  font-size: 20px;
+  background-color: #2e2e2e;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  margin-left: 260px;
+  /* Adjust this margin to fit the width of your sidenav */
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+#cards {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  max-width: inherit;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+#cards:hover>.card::after {
+  opacity: 1;
+}
+
+.card
+/*content inside the card*/
+  {
+  border-radius: 15px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+  border: rgba(255, 255, 255, 0.49);
+  padding: 10px;
+  margin-bottom: 20px;
+  margin-top: 50px;
+  backdrop-filter: blur(18px);
+  /* Apply blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  /* Safari support */
+  min-height: 0;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+.card::before,
+.card::after {
+  border-radius: inherit;
+  content: "";
+  height: 100%;
+  left: 0px;
+  opacity: 0;
+  position: absolute;
+  top: 0px;
+  transition: opacity 1500ms;
+  width: 100%;
+}
+
+.card::before {
+  background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
+      rgba(0, 242, 255, 0),
+      transparent 70%);
+  z-index: 1;
+}
+
+.card::after {
+  background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y),
+      rgba(161, 161, 161, 0.434),
+      transparent 40%);
+  z-index: 1;
+}
+
+.card>.card-content {
+  background-color: var(--card-color);
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 10px;
+  position: static;
+  z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card img {
+  width: 50%;
+  height: auto;
+  border: 0px;
+  border-radius: 5px;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+}
+
+.card-content pre {
+  font-size: clamp(1rem, 2vw, 1rem);
+  /* Dynamically adjust text size */
+  margin: 0 0 10px;
+  color: #333;
+  white-space: pre-wrap;
+  overflow: visible;
+  word-break: break-word;
+}
+
+/* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
+
+@media (max-width: 1500px) {
+  body {
+    align-items: flex;
+    overflow: auto;
+  }
+
+  #main {
+    padding: 10px;
+    height:100vh;
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 0px 0px 0px 0px;
+  }
+
+  .card {
+    width: calc(100%);
+    min-height: 150px;
+    height: auto;
+  }
+  .card-content pre {
+  font-size: clamp(1rem, 2vw, 1rem);
+  /* Dynamically adjust text size */
+  margin: 0 0 10px;
+  color: #333;
+  white-space: pre-wrap;
+  overflow: visible;
+  word-break: break-word;
+  }
+}
+
+@media (max-width: 1000px) {
+  body {
+    align-items: flex;
+    overflow: auto;
+  }
+
+  #cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 0px 0px 0px 0px;
+  }
+
+  .card {
+    flex-shrink: 1;
+    width: calc(100%);
+    min-height: 150px;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    width: 100%;
+    position: relative;
+    height: auto;
+    padding-top: 10px;
+    left: 0;
+    top: 0;
+    overflow: auto;
+  }
+
+  .sidenav a {
+    font-size: 16px;
+    padding: 8px 10px;
+    line-height: 2.5;
+  }
+
+  .sidenav .closebtn {
+    font-size: 28px;
+    right: 10px;
+    margin-left: 0;
+  }
+
+  #main {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 1.2;
+    padding: 8px 10px;
+  }
+
+  .nav-button {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 8px 10px;
+  }
+
+  #cards {
+    flex-direction: column;
+    gap: 30px;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    min-height: 120px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+
+  .card img {
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .card-content pre {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .sidenav {
+    display: none;
+  }
+
+  #menu-btn {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #161616;
+    color: aliceblue;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .sidenav.active {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #161616;
+    z-index: 1002;
+    box-shadow: 2px 0 12px rgba(0, 0, 0, 0.3);
+    animation: slideInNav 0.3s ease;
+  }
+
+  @keyframes slideInNav {
+    from {
+      left: -320px;
+      opacity: 0;
+    }
+
+    to {
+      left: 0;
+      opacity: 1;
+    }
+  }
+
+  .sidenav .closebtn {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 32px;
+    color: aliceblue;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1003;
+  }
+
+  #main {
+    margin-left: 0;
+    padding: 10px;
+  }
+
+  .title {
+    font-size: 48px;
+    line-height: 1.2;
+    padding: 8px 10px;
+  }
+
+  .nav-button {
+    font-size: 16px;
+    margin-top: 10px;
+    padding: 8px 10px;
+  }
+
+  #cards {
+    flex-direction: column;
+    gap: 30px;
+    padding: 5px;
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    height: 180px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+}
+
+.card img {
+  width: 80%;
+  border-radius: 10px;
+}
+
+.card-content pre {
+  font-size: 1rem;
+}

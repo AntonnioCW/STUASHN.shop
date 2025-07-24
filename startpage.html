@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>STUASHN.shop</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+        .card {
+            color: rgb(0, 0, 0);
+            padding: 0px;
+            text-decoration: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .flap {
+            transition: transform 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: transform;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div id="flap-container" style="position: relative; display: inline-block;">
+        <a href="/shop.html" class="flap"
+            style="text-decoration: none; color: black; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; align-items: center;">STUASHN</a>
+    </div>
+
+    <script src="render.js"></script>
+    <script type="module">
+        import { flip } from './script.js'
+        flip('.flap')
+    </script>
+    <script>
+        const flap = document.querySelector('.flap');
+        const flapContainer = document.getElementById('flap-container');
+        // Create dot element in JS
+        const orbitDot = document.createElement('div');
+        orbitDot.textContent = 'ENTER';
+        orbitDot.style.position = 'absolute';
+        orbitDot.style.left = '50%';
+        orbitDot.style.top = '50%';
+        orbitDot.style.background = 'none';
+        orbitDot.style.color = 'black';
+        orbitDot.style.fontSize = '18px';
+        orbitDot.style.fontFamily = "'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif";
+        orbitDot.style.fontWeight = 'bold';
+        orbitDot.style.width = 'auto';
+        orbitDot.style.height = 'auto';
+        orbitDot.style.borderRadius = '0';
+        orbitDot.style.transform = 'translate(-50%, -50%)';
+        orbitDot.style.pointerEvents = 'none';
+        flapContainer.appendChild(orbitDot);
+
+        // Change flap text to 'ENTER' after flap animation on hover
+        let flapTextTimeout;
+        flap.addEventListener('mouseenter', () => {
+            // Wait for the flap animation to finish (100ms from CSS)
+            flapTextTimeout = setTimeout(() => {
+                flap.textContent = 'ENTER';
+            }, 120); // slightly longer than animation duration
+        });
+        flap.addEventListener('mouseleave', () => {
+            clearTimeout(flapTextTimeout);
+            flap.textContent = 'STUASHN';
+        });
+
+        let mouseX = 0, mouseY = 0;
+        let centerX = window.innerWidth / 2;
+        let centerY = window.innerHeight / 2;
+        let targetX = 0, targetY = 0;
+        let currentX = 0, currentY = 0;
+        let dotAngle = 0;
+        let dotRadius = 70;
+        let dotTargetAngle = 0;
+
+        function moveFlap(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            targetX = Math.max(-30, Math.min(30, (mouseX - centerX) * 0.05));
+            targetY = Math.max(-30, Math.min(30, (mouseY - centerY) * 0.05));
+            // Calculate angle from center to mouse
+            dotTargetAngle = Math.atan2(mouseY - centerY, mouseX - centerX);
+            // Normalize angle to [0, 2PI] for full 360
+            if (dotTargetAngle < 0) dotTargetAngle += Math.PI * 2;
+            // Calculate distance from center
+            let dist = Math.sqrt(Math.pow(mouseX - centerX, 2) + Math.pow(mouseY - centerY, 2));
+            // Find max possible distance (edge of screen from center)
+            let maxDistX = Math.max(centerX, window.innerWidth - centerX);
+            let maxDistY = Math.max(centerY, window.innerHeight - centerY);
+            let maxDist = Math.sqrt(Math.pow(maxDistX, 2) + Math.pow(maxDistY, 2));
+            // Interpolate radius: min at center (0), max at edge
+            let minRadius = 0;
+            let maxRadius = Math.min(centerX, centerY) - 20; // keep dot inside screen
+            let t = dist / maxDist;
+            let newRadius = minRadius + t * (maxRadius - minRadius);
+            dotRadius += (newRadius - dotRadius) * 0.15; // smooth radius change
+        }
+
+        function animate() {
+            currentX += (targetX - currentX) * 0.15;
+            currentY += (targetY - currentY) * 0.15;
+            flap.style.transform = `translate(${currentX}px, ${currentY}px)`;
+            // Smoothly animate dot angle
+            // Calculate shortest direction for smooth orbit
+            let delta = dotTargetAngle - dotAngle;
+            if (delta > Math.PI) delta -= Math.PI * 2;
+            if (delta < -Math.PI) delta += Math.PI * 2;
+            dotAngle += delta * 0.15;
+            // Position dot around anchor
+            const x = Math.cos(dotAngle) * dotRadius;
+            const y = Math.sin(dotAngle) * dotRadius;
+            orbitDot.style.transform = `translate(-50%, -50%) translate(${x}px, ${y}px)`;
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('mousemove', moveFlap);
+        window.addEventListener('resize', () => {
+            centerX = window.innerWidth / 2;
+            centerY = window.innerHeight / 2;
+        });
+        animate();
+    </script>
+</body>
+
+</html>

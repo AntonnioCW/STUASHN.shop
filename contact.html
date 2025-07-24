@@ -1,0 +1,212 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2e2e2e;
+        }
+
+        .title {
+            line-height: 5.3;
+            font-family: "Space Mono", monospace;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            color: aliceblue;
+            transition: font-size 0.5s ease;
+            font-size: 150px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #161616;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidenav a {
+            color: aliceblue;
+            text-decoration: none;
+            line-height: 5.3;
+            font-family: "Space Mono", monospace;
+            padding: 10px 15px;
+            display: block;
+            transition: font-size 0.5s ease;
+            font-size: 18px;
+        }
+
+        .sidenav a:hover {
+            font-size: 20px;
+            background-color: #2e2e2e;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            margin-left: 260px;
+            /* Adjust this margin to fit the width of your sidenav */
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidenav {
+                width: 30%;
+                overflow: hidden;
+            }
+
+            .sidenav a {
+                font-size: 10px;
+            }
+              .sidenav a:hover {
+            font-size: 12px;
+            background-color: #2e2e2e;
+            }
+
+            #main {
+                margin-left: 10px;
+            }
+
+            .contact-form {
+                width: 90vw;
+                max-width: 250px;
+                min-width: 0;
+                margin-left: 20%;
+            }
+        }
+
+        .contact-form {
+            background: #404040;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+        }
+
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: rgb(162, 162, 162);
+        }
+
+        .contact-form label {
+            color: rgb(162, 162, 162);
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            max-width: 95%;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .contact-form button {
+            background: #007BFF;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .contact-form button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a class="title" href="/startpage.html">ToneSki</a>
+        <p>
+            <a class="nav-button" href="/shop.html">Home</a>
+            <a class="nav-button" href="privacy-policy.html">Privacy Policy</a>
+            <a class="nav-button" href="terms-of-service.html">Terms of Service</a>
+            <!-- <a class="nav-button" href="archive.html">Archive</a> -->
+    </div>
+    <div id="main">
+        <form class="contact-form" id="contact-form">
+            <h2>Contact Us</h2>
+            <label for="email">Your Email</label>
+            <input type="text" id="email" name="email" required>
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <script type="module">
+        import { flip } from './script.js'
+        flip('.flap') 
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof emailjs === "undefined") {
+                console.error("EmailJS library failed to load.");
+                return;
+            }
+
+            emailjs.init("sPtQNGxOLMg9rRJCW"); // Replace with your EmailJS Public Key
+
+            document.getElementById("contact-form").addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Collect form data
+                const email = document.getElementById("email").value; // User's email
+                const subject = document.getElementById("subject").value;
+                const message = document.getElementById("message").value;
+
+                // Send email using EmailJS
+                emailjs.send("service_8djpcrw", "template_55kok4o", {
+                    to_email: "contactstuashn@gmail.com", // Your email to receive messages
+                    from_email: email, // User's email
+                    subject: subject,
+                    message: message,
+                })
+                    .then(response => {
+                        alert("Message sent successfully!");
+                        console.log("SUCCESS!", response.status, response.text);
+                        document.getElementById("contact-form").reset(); // Reset form after sending
+                    })
+                    .catch(error => {
+                        alert("Failed to send message. Please try again.");
+                        console.error("FAILED...", error);
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>

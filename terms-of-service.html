@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Terms of Service</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            color: #c6c6c6;
+            font-family: "Space Mono", monospace;
+            background-color: #2e2e2e;
+            margin: 0;
+            overflow: scroll;
+        }
+
+        h1,
+        h2 {
+            color: #ffffff;
+        }
+
+        a {
+            color: #00000000;
+            text-decoration: none;
+        }
+
+        .flap span {
+            display: block;
+            height: var(--line-height);
+            line-height: var(--line-height);
+            color: rgb(214, 214, 214);
+        }
+
+        #text.flap {
+            font-family: "Space Mono", monospace;
+            font-weight: 1;
+            font-style: italic;
+        }
+
+        #text {
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+            user-select: none;
+            /* Standard */
+            position: absolute;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            transition: transform .2s ease-out;
+            pointer-events: none;
+            /* Prevent interference */
+            transform: translate(-50%, -50%);
+            /* Center text around the cursor */
+            will-change: transform;
+            /* Performance optimization */
+        }
+
+        .title {
+            line-height: 5.3;
+            font-family: "Space Mono", monospace;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            color: aliceblue;
+            transition: font-size 0.5s ease;
+            font-size: 150px;
+            font-weight: bolder;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #161616;
+            padding-top: 20px;
+            transition: 0.3s;
+        }
+
+        .sidenav a {
+            color: aliceblue;
+            line-height: 5.3;
+            font-family: "Space Mono", monospace;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: font-size 0.5s ease;
+            font-size: 18px;
+        }
+
+        .sidenav a:hover {
+            font-size: 20px;
+            background-color: #2e2e2e;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        #main {
+            margin-left: 260px;
+            /* Adjust this margin to fit the width of your sidenav */
+            padding: 20px;
+            transition: margin-left 0.3s;
+        }
+
+        @media screen and (max-width: 768px) {
+            .sidenav {
+                width: 30%;
+                overflow: hidden;
+            }
+
+            .sidenav a {
+                font-size: 10px;
+            }
+              .sidenav a:hover {
+            font-size: 12px;
+            background-color: #2e2e2e;
+            }
+
+            #main {
+                margin-left: 10px;
+            }
+
+            .contact-form {
+                width: 90vw;
+                max-width: 250px;
+                min-width: 0;
+                margin-left: 20%;
+            }
+            #main {
+                margin-left: 40vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="sidenav">
+        <a class="title" href="/startpage.html">ToneSki</a>
+        <p>
+            <a class="nav-button" href="/shop.html">Home</a>
+            <a class="nav-button" href="/contact.html">Contact</a>
+            <a class="nav-button" href="privacy-policy.html">Privacy Policy</a>
+            <!-- <a class="nav-button" href="archive.html">Archive</a> -->
+    </div>
+    <div id="main">
+        <div class="paywall-container">
+            <h1>Terms of Service</h1>
+            <p>Effective Date: </p>
+
+            <p>Welcome. By accessing or using our website, you agree to be
+                bound by these Terms of Service ("Terms"). If you do not agree, please do not use our website.</p>
+
+            <h2>1. Use of Our Website</h2>
+            <p>You agree to use our website only for lawful purposes. You must not misuse our services or interfere with
+                the website's normal operations.</p>
+
+            <h2>3. Orders and Payments</h2>
+            <ul>
+                <li>All orders are subject to availability and confirmation of the order price.</li>
+                <li>We reserve the right to refuse or cancel any order for any reason, including product availability or
+                    pricing errors.</li>
+                <li>Payment must be made at the time of purchase. We accept [Payment Methods].</li>
+            </ul>
+
+            <h2>4. Shipping and Delivery</h2>
+            <p>Shipping times may vary based on your location. We are not responsible for delays caused by carriers or
+                customs.</p>
+
+            <h2>5. Returns and Refunds</h2>
+            <p>We accept returns within [X] days of delivery. Products must be unused and in original packaging. Refunds
+                will be processed within [X] business days after receiving the returned item.</p>
+
+            <h2>6. Intellectual Property</h2>
+            <p>All content on this website, including text, graphics, logos, and images, is the property of [Your Store
+                Name] and is protected by intellectual property laws.</p>
+
+            <h2>7. Limitation of Liability</h2>
+            <p>We are not liable for any indirect, incidental, or consequential damages arising from your use of our
+                website or products.</p>
+
+            <h2>8. Changes to These Terms</h2>
+            <p>We may update these Terms at any time. We’ll notify you of any changes by posting the updated Terms on
+                our website.</p>
+
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions about these Terms, please contact us at:</p>
+            <p>Email: <a href="mailto:[Your Contact Email]">[Your Contact Email]</a></p>
+
+            <footer>
+                <p>© [Your Store Name] [Year]. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script type="module">
+    import { flip } from './script.js'
+    flip('.flap') 
+</script>
+
+</html>

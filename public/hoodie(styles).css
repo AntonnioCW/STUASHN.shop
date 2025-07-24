@@ -1,0 +1,448 @@
+body {
+    background-color: #2e2e2e;
+    align-items: center;
+    height: 100vh;
+    background-position: center;
+    font-size: x-large;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+  .title{
+    line-height: 5.3;
+    font-family: "Space Mono", monospace;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    color:aliceblue;
+    transition: font-size 0.5s ease;
+    font-size: 150px;
+    font-style: italic;
+    font-weight: bolder;
+  }
+
+  .nav-button {
+  line-height: 5.3;
+  font-family: "Space Mono", monospace;
+  margin-top: 25px;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  color: aliceblue;
+  transition: font-size 0.5s ease;
+  font-size: 18px;
+}
+
+  .sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #161616;
+    padding-top: 20px;
+    transition: 0.3s;
+  }
+  .sidenav a {
+    line-height: 5.3;
+    font-family: "Space Mono", monospace;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    transition: font-size 0.5s ease;
+    font-size: 18px;
+  }
+  .sidenav a:hover {
+    font-size: 20px;
+    background-color: #2e2e2e;
+  }
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  #main {
+    margin-left: 260px; /* Adjust this margin to fit the width of your sidenav */
+    padding: 20px;
+    transition: margin-left 0.3s;
+  }
+  @media screen and (max-width: 768px) {
+    .sidenav {
+      width: 0;
+      overflow: hidden;
+    }
+    #main {
+      margin-left: 0%;;
+    }
+  }
+  
+  .paywall-container {
+    font-family: monospace;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 9000px;
+    max-height: fit-content;
+    background: #2f2f2f;
+    overflow: hidden;
+  }
+
+  /* Image Section */
+  .paywall-image {
+    overflow: visible;
+    border-radius: 10px;
+    flex: 1; /* Takes up equal space */
+    min-width: 100px;
+    min-height: 100px;
+    background: url('https://via.placeholder.com/400') no-repeat center/cover;
+  }
+
+  /* Info Section */
+  .quantity-selection {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .quantity-input {
+    margin-left: 20px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  .paywall-info {
+    color: #ffffff;
+    flex: 2; /* Larger section */
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .paywall-title {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+
+  .payw all-price {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+  }
+
+  .paywall-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  /* Size Selection */
+  .size-selection {
+    margin-bottom: 10px;
+  }
+
+  .size-selection label {
+    margin-right: 0px;
+  }
+
+  .size-dropdown {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  /* Pricing Table */
+  .paywall-pricing {
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    color: #ffffff;
+  }
+
+  .paywall-pricing th,
+  .paywall-pricing td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .paywall-pricing th {
+    background: #f0f0f0;
+    font-weight: bold;
+  }
+
+  /* Total Row */
+  .paywall-total {
+    font-weight: bold;
+    background: #f9f9f9;
+  }
+
+  .paywall-buttons {
+    display: flex;
+    gap: 15px;
+  }
+
+  .paywall-button {
+    flex: 1;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+
+  .paywall-button-primary {
+    background: #3b3b3b;
+    color: #ffffff;
+  }
+
+  .paywall-button-primary:hover {
+    background: #686868;
+    color: black;
+  }
+
+  /* Product Description */
+  .additional-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #ffffff;
+  }
+
+  /* Responsiveness */
+  @media (max-width: 1470px) {
+    body{
+      overflow: scroll;
+    }
+    .sidenav {
+      width: 20%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+    .sidenav a:hover {
+      font-size: 20px;
+    }
+    .sidenav .closebtn {
+      font-size: 24px;
+      right: 10px;
+    }
+    #main {
+      margin-left: 20%;
+    }
+    .paywall-container {
+      flex-direction: row;
+      align-items: left;
+      
+    }
+
+    .paywall-image {
+
+      overflow: visible;
+      border-radius: 10px;
+      flex: 1; /* Takes up equal space */
+      width: 100%;
+      height: 100%;
+      min-width: 100px;
+      min-height: 100px;
+      background: url('https://via.placeholder.com/400') no-repeat center/cover;
+    
+    }
+
+    .paywall-info {
+      width: 100%;
+      text-align: left;
+    }
+
+    .paywall-title,
+    .paywall-price,
+    .paywall-description {
+      font-size: 1.2rem;
+    }
+
+    .paywall-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    body{
+      overflow: scroll;
+    }
+    .sidenav {
+      width: 25%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .sidenav a {
+      font-size: 14px;
+    }
+    .sidenav a:hover {
+      font-size: 15px;
+    }
+    .sidenav .closebtn {
+      font-size: 24px;
+      right: 10px;
+    }
+    #main {
+      margin-left: 25%;
+    }
+    .paywall-container {
+      flex-direction: row;
+      align-items: left;
+      
+    }
+
+    .paywall-image {
+
+      overflow: visible;
+      border-radius: 10px;
+      flex: 1; /* Takes up equal space */
+      width: 100%;
+      height: 100%;
+      min-width: 100px;
+      min-height: 100px;
+      background: url('https://via.placeholder.com/400') no-repeat center/cover;
+    
+    }
+
+    .paywall-info {
+      width: 100%;
+      text-align: left;
+    }
+
+    .paywall-title,
+    .paywall-price,
+    .paywall-description {
+      font-size: 1.2rem;
+    }
+
+    .paywall-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 770px) {
+    body{
+      overflow: scroll;
+    }
+    .sidenav {
+      width: 30%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .sidenav a {
+      font-size: 14px;
+    }
+    .sidenav a:hover {
+      font-size: 15px;
+    }
+    .sidenav .closebtn {
+      font-size: 24px;
+      right: 10px;
+    }
+    #main {
+      margin-left: 30%;
+    }
+    .paywall-container {
+      flex-direction: column;
+      align-items: left;
+      
+    }
+
+    .paywall-image {
+      margin: 10px 0px 0px 0px; 
+      padding: 0;
+      width: 70%;
+      overflow: visible;
+      border-radius: 10px;
+      flex: 1; /* Takes up equal space */
+      background: url('https://via.placeholder.com/400') no-repeat center/cover;
+    
+    }
+
+    .paywall-info {
+      width: 100%;
+      text-align: left;
+    }
+
+    .paywall-title,
+    .paywall-price,
+    .paywall-description {
+      font-size: 1.2rem;
+    }
+
+    .paywall-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    body{
+      overflow: scroll;
+    }
+    .sidenav {
+      width: 30%;
+      height: 100%;
+      overflow: hidden;
+    }
+    .sidenav a {
+      font-size: 13px;
+    }
+    .sidenav a:hover {
+      font-size: 14px;
+    }
+    .sidenav .closebtn {
+      font-size: 24px;
+      right: 10px;
+    }
+    #main {
+      margin-left: 30%;
+    }
+    .paywall-container {
+      flex-direction: column;
+      align-items: left;
+      
+    }
+
+    .paywall-image {
+      margin: 10px 0px 0px 0px; 
+      padding: 0;
+      width: 70%;
+      overflow: visible;
+      border-radius: 10px;
+      flex: 1; /* Takes up equal space */
+      background: url('https://via.placeholder.com/400') no-repeat center/cover;
+    
+    }
+
+    .paywall-info {
+      width: 100%;
+      text-align: left;
+    }
+
+    .paywall-title,
+    .paywall-price,
+    .paywall-description {
+      font-size: 1.2rem;
+    }
+
+    .paywall-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
